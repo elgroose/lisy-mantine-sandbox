@@ -1,6 +1,7 @@
-import { Container, Select, TextInput, Paper, Checkbox } from '@mantine/core';
- // import classes from './ContainedInput.module.css';
-import classes from './Welcome.module.css';
+import { Container, Select, RangeSlider, Slider, TextInput, Paper, Checkbox } from '@mantine/core';
+ import classes from './Welcome.module.css';
+import React, { useState } from 'react';
+
 
 export function Welcome() {
   // const form = useForm({
@@ -13,15 +14,19 @@ export function Welcome() {
   //   },
   // });
 
+  const [values, setValues] = useState([20, 1500]);
+  const formatThumbLabel = (value) => `$${value}`;
+
+ 
   return (
     <>
-    <Paper radius="md" p="xl"  withBorder className={classes.paperContainer}>
+    <Paper radius="md" p="xl" withBorder className={classes.paperContainer}>
 
-      <Container size="m" >
+      <Container size="m"   >
 
       <h1 className={classes.h1}>Community Address</h1>
 
-        <TextInput label="Community name" placeholder="Camrose Apartments" classNames={classes} />
+        <TextInput label="Name" placeholder="Camrose Apartments" classNames={classes} />
 
         <TextInput
           label="Address"
@@ -52,12 +57,9 @@ export function Welcome() {
 <Checkbox
       defaultChecked
       label="Multiple addresses"
+      mt="md"
     />
 
-<Checkbox
-      defaultChecked
-      label="Subsidy tenants"
-    />
         
       </Container>
     
@@ -77,15 +79,44 @@ export function Welcome() {
       <TextInput label="Community phone" placeholder="(206) 887-3723" classNames={classes} />
 
 
-       
+
+      <Checkbox
+      defaultChecked
+      label="Subsidy tenants"
+      my="md"
+    />
+
+
+<Checkbox
+      defaultChecked
+      label="Generate small balance notices?"
+      my="md"
+      
+    />
+
+
+ <p my="lg">
+        <b>Minimum and maximum for the small balance notices</b>
+ </p>
+ <RangeSlider
+        min={20}
+        max={1500}
+        value={values}
+        onChange={setValues}
+        labelAlwaysOn
+        marks={[
+          { value: 20, label: '$20' },
+          { value: 1500, label: '$1500' }
+        ]}
+        thumbLabel={formatThumbLabel}
+        my="lg"
+        py="lg"
+      />
+  
 
       </Container>
 
       </Paper>
-
-
-
-
 
     <Paper radius="md" p="xl"  withBorder className={classes.paperContainer}>
 
@@ -93,18 +124,17 @@ export function Welcome() {
 
 <h1 className={classes.h1}>User Settings</h1>
 
+    <TextInput label="Property management company" placeholder="Avenue5" classNames={classes} />
+
 
 <Select
           mt="md"
           comboboxProps={{ withinPortal: true }}
-          data={['On-site Property Manager', 'Assistant Property Manager', 'Regional Property Manager', 'Owner', 'Other']}
+          data={['On-site Property Manager', 'Assistant Property Manager', 'Operations Manager', 'Regional Property Manager', 'Owner', 'Other']}
           placeholder="Pick one"
           label="Who will be using Nupace to run notices?"
           classNames={classes}
         />
-
-    <TextInput label="Property managers" placeholder="Avenue5" classNames={classes} />
-
 
 
     <TextInput
@@ -139,54 +169,44 @@ export function Welcome() {
 </Paper>
 
 
-
-
 <Paper radius="md" p="xl"  withBorder className={classes.paperContainer}>
 
 <Container size="m" >
 
 <h1 className={classes.h1}>Attorney Settings</h1>
 
-
-<Select
-          mt="md"
-          comboboxProps={{ withinPortal: true }}
-          data={['On-site Property Manager', 'Assistant Property Manager', 'Regional Property Manager', 'Owner', 'Other']}
-          placeholder="Pick one"
-          label="Who will be using Nupace to run notices?"
-          classNames={classes}
-        />
-
-    <TextInput label="Property managers" placeholder="Avenue5" classNames={classes} />
-
-
-
     <TextInput
-          label="First name"
+          label="Practice name"
           placeholder="Lisy"
-          // {...form.getInputProps('user.firstName')}
+          // {...form.getInputProps('lawyer.practiceName')}
         />
         <TextInput
-          label="Last name"
-          placeholder="ruiz"
+          label="Name"
+          placeholder="Alice Smith"
           mt="md"
-          // {...form.getInputProps('user.lastName')}
+          // {...form.getInputProps('lawyer.name')}
         />
  
         <TextInput
           label="Phone"
-          placeholder="(425) 654-1022"
+          placeholder="(415) 613-3033"
           mt="md"
-          // {...form.getInputProps('user.phone')}
+          // {...form.getInputProps('lawyer.phone')}
         />
 
       <TextInput
           label="Email"
-          placeholder="pm.camrose@avenue5.com"
+          placeholder="alice@kendallaw.com"
           mt="md"
-          // {...form.getInputProps('user.email')}
+          // {...form.getInputProps('lawyer.email')}
         />
  
+ <TextInput
+          label="Address"
+          placeholder="4331 Lake Washington Blvd NE, Suite 200 Kirkland, WA 98033"
+          mt="md"
+          // {...form.getInputProps('lawyer.address')}
+        />
 
 </Container>
 

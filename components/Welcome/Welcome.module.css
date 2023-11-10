@@ -6,10 +6,16 @@
 
   
 }
-
+ 
 .paperContainer {
   display: block; /* or 'flex' depending on your layout needs */
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 32px;
+  margin-top: 32px;
+  padding: 50px;
   max-width: 960px; /* or whatever your desired max width is */
 }
+
+ 
+ 
