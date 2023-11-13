@@ -1,0 +1,21 @@
+.title {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(100px);
+  font-weight: 900;
+  letter-spacing: rem(-2px); 
+
+  
+}
+ 
+.paperContainer {
+  display: block; /* or 'flex' depending on your layout needs */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+  margin-top: 32px;
+  padding: 50px;
+  max-width: 960px; /* or whatever your desired max width is */
+}
+
+ 
+ 

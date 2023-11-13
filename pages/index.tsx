@@ -1,22 +1,14 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Waitlist } from '../components/Waitlist/Waitlist';
-
+import { UserOnboard } from '@/components/UserOnboard/UserOnboard';
+import { CommunityConfig } from '@/components/CommunityConfig/CommunityConfig';
 
 export default function HomePage() {
   return (
     <>
-      {/* <Welcome /> */}
-      <Waitlist />
-
-
-
-
- 
-       {/* <ColorSchemeToggle /> */}
-       
-        </>
+     <UserOnboard />
+      {/* <CommunityConfig /> */}
+    </>
   );
 }
+
 
  
