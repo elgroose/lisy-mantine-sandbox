@@ -20,6 +20,121 @@ export function Welcome() {
  
   return (
     <>
+
+
+
+<Paper radius="md" p="xl"  withBorder className={classes.paperContainer}>
+
+<Container size="m" >
+
+<h1 className={classes.h1}>Community Configuration</h1>
+
+    <TextInput label="CommunityID" placeholder="9ab23251-8c65-4142-9769-ce35eb048bb4" classNames={classes} />
+    <TextInput label="CommunityApprovedSigner" placeholder="Jane Smith" classNames={classes} />
+    
+    <TextInput
+          label="LawyerFirm"
+          placeholder="Puckett & Redford"
+          // {...form.getInputProps('lawyer.practiceName')}
+        />
+
+        <TextInput
+          label="LawyerName"
+          placeholder="Alice Smith"
+          mt="md"
+          // {...form.getInputProps('lawyer.name')}
+        />
+ 
+        <TextInput
+          label="LawyerPhone"
+          placeholder="(415) 613-3033"
+          mt="md"
+          // {...form.getInputProps('lawyer.phone')}
+        />
+
+      <TextInput
+          label="LawyerEmail"
+          placeholder="alice@kendallaw.com"
+          mt="md"
+          // {...form.getInputProps('lawyer.email')}
+        />
+  
+ <TextInput
+          label="LawyerAddress"
+          placeholder="4331 Lake Washington Blvd NE, Suite 200 Kirkland, WA 98033"
+          mt="md"
+          // {...form.getInputProps('lawyer.address')}
+        />
+
+
+
+<Select
+      label="ImportReportSource"
+      placeholder="Pick value"
+      data={['Yardi', 'Real Page', 'Other']}
+    />
+
+
+ 
+
+
+<Checkbox
+      defaultChecked
+      label="Generate small balance notices?"
+      my="md"
+      
+    />
+
+{/* DelinquentAmount
+SmallBalanceAmount */}
+
+ <p my="lg">
+        <b>Minimum and maximum for the small balance notices</b>
+ </p>
+ <RangeSlider
+        min={20}
+        max={1500}
+        value={values}
+        onChange={setValues}
+        labelAlwaysOn
+        marks={[
+          { value: 20, label: '$20' },
+          { value: 1500, label: '$1500' }
+        ]}
+        thumbLabel={formatThumbLabel}
+        my="lg"
+        py="lg"
+      />
+
+
+<Checkbox
+      defaultChecked
+      label="Subsidy tenants"
+      my="md"
+    />
+
+<Checkbox
+      defaultChecked
+      label="CommunityHasMultiAddress"
+      my="md"
+    />
+
+
+<Checkbox
+      defaultChecked
+      label="PaymentPlanOfferForAll"
+      my="md"
+    />
+
+ 
+ 
+ 
+
+</Container>
+
+</Paper>
+
+
     <Paper radius="md" p="xl" withBorder className={classes.paperContainer}>
 
       <Container size="m"   >
@@ -80,38 +195,9 @@ export function Welcome() {
 
 
 
-      <Checkbox
-      defaultChecked
-      label="Subsidy tenants"
-      my="md"
-    />
+    
 
 
-<Checkbox
-      defaultChecked
-      label="Generate small balance notices?"
-      my="md"
-      
-    />
-
-
- <p my="lg">
-        <b>Minimum and maximum for the small balance notices</b>
- </p>
- <RangeSlider
-        min={20}
-        max={1500}
-        value={values}
-        onChange={setValues}
-        labelAlwaysOn
-        marks={[
-          { value: 20, label: '$20' },
-          { value: 1500, label: '$1500' }
-        ]}
-        thumbLabel={formatThumbLabel}
-        my="lg"
-        py="lg"
-      />
   
 
       </Container>
