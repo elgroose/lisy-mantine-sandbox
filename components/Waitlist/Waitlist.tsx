@@ -29,7 +29,7 @@ export function Waitlist() {
 
         <Button
           variant="gradient"
-          gradient={{ from: 'blue', to: 'rgba(33, 171, 235, 1)', deg: 185 }}
+          gradient={{ from: 'rgba(0,159,255)', to: 'rgba(0,81,255)', deg: 185 }}
         >
           Join the waitlist
         </Button>
