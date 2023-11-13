@@ -1,0 +1,85 @@
+// public class AppUserExtendedInfo
+//     {
+//         public AppUserExtendedInfo() {
+//             AppUserId  = string.Empty;
+//             Email = string.Empty;
+//             PmorgId = string.Empty;
+//             PmorgName = string.Empty;
+//             FirstName = string.Empty;
+//             LastName = string.Empty;
+//             CommunityId = string.Empty;
+//             CommunityName = string.Empty;
+//             CommunityCode = string.Empty;
+//             OwnerId = string.Empty;
+//             OwnerName = string.Empty;
+//             AppUserCommunityConfiguration = new CommunityConfiguration();
+//         }
+//         public string AppUserId { get; set; }
+//         public string Email { get; set; }
+//         public string PmorgId  { get; set; }
+//         public string PmorgName { get; set; }
+//         public string FirstName { get; set; }
+//         public string LastName { get; set; }
+//         public string FullName
+//         {
+//             get
+//             {
+//                 return $"{FirstName} {LastName}";
+//             }
+//         }
+//         public string  CommunityId { get; set; }
+//         public string CommunityName { get; set;}
+//         public string CommunityCode { get; set; }
+//         public string OwnerId { get; set; }
+//         public string OwnerName { get; set; }
+//         /// <summary>
+//         /// This property is the community configuration as stored in the Community table in the ExtraInfo
+//         /// field.
+//         /// Use this field when creating reports.
+//         /// </summary>
+//         public CommunityConfiguration AppUserCommunityConfiguration { get; set; }
+
+
+
+
+
+//         Updated the GetAppUserExtendedInfo method to incluse the community configuration.
+// The class now has a Property withe the Community Configuration on it...
+// Here is an example from running in Postman.
+// {
+//     "appUserId": "45647d8a-3614-4242-87c6-7e62fb15794a",
+//     "email": "glover.ruiz@gmail.com",
+//     "pmorgId": "25b7b97f-9e97-4963-acc8-b627a0dfb1fc",
+//     "pmorgName": "Avenue5 Residential",
+//     "firstName": "Glover",
+//     "lastName": "Ruiz",
+//     "fullName": "Glover Ruiz",
+//     "communityId": "6af18f65-93fb-418e-8350-ce1717d8fc70",
+//     "communityName": "Flux Paraiso Rentals Ltd",
+//     "communityCode": "pn70123",
+//     "ownerId": "c7110ca2-f468-4c89-ba82-3fcb5697c5b1",
+//     "ownerName": "DaCosta International Holdings",
+//     "appUserCommunityConfiguration": {
+//         "communityId": "9ab23251-8c65-4142-9769-ce35eb048bb4",
+//         "communityApprovedSigner": "",
+//         "lawyerFirm": "Best At Work Legal Inc.",
+//         "lawyerName": "Skeeny Phat",
+//         "lawyerAddress": "",
+//         "lawyerPhone": "",
+//         "lawyerEmail": "",
+//         "communityRepresentative": "",
+//         "nupaceInputDataFolder": "",
+//         "nupaceOutputDataFolder": "",
+//         "bundleAllDocuments": false,
+//         "communityHasSection8": false,
+//         "communityHasMultiAddress": false,
+//         "paymentPlanOfferForAll": false,
+//         "delinquentAmount": 0,
+//         "importReportSource": "yardi",
+//         "generateCaresAct": false,
+//         "generateERPP": false,
+//         "generateSmallBalance": false,
+//         "smallBalanceAmount": 0,
+//         "tenantFriendlyRepayment": false,
+//         "lastUpdated": "2023-10-07T21:37:27.1390184-07:00",
+//         "isConfigStale": false
