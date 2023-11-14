@@ -23,6 +23,11 @@ export function CommunityConfig() {
         <Container size="m">
           <h1 className={classes.h1}>Superuser Configure the Community </h1>
 
+{/* this code is just as inspo for the dropdown */}
+          {/* <select onChange={(e) => selectedUser(e)} className=" form-select-control"> Please select the user {active && users.map((user: any) => ( {user.displayName} ))}
+        const selectedUser = (e: any) => { setUser(e.target.id); }; */}
+
+{/* pull the community and the select will have the name */}
           <TextInput
             label="communityId"
             placeholder="9ab23251-8c65-4142-9769-ce35eb048bb4"
@@ -30,11 +35,14 @@ export function CommunityConfig() {
           />
 
           <TextInput
-            label="communityApprovedSigner"
-            placeholder="Julia SMith"
+            label="communityRepresentative"
+            placeholder="Julia Smith"
             classNames={classes}
           />
 
+
+
+{/* NOT MVP BUT FOR FUTURE: create a normal form for lawyers ... create a lawyer table  and only select the practice name in the confif. values will come from ID */}
           <TextInput
             label="LawyerFirm"
             placeholder="Puckett & Redford"
@@ -69,23 +77,24 @@ export function CommunityConfig() {
             // {...form.getInputProps('lawyer.email')}
           />
 
-          <Checkbox defaultChecked label="BundleAllDocuments?" my="md" />
+          <Checkbox defaultChecked label="bundleAllDocuments" my="md" />
 
+{/* we want to remove this field and replace with a subsidy boolean */}
           <Checkbox defaultChecked label="communityHasSection8?" my="md" />
 
-          <Checkbox defaultChecked label="communityHasMultiAddress" my="md" />
 
-          <Checkbox defaultChecked label="Subsidy tenants" my="md" />
 
           <Checkbox defaultChecked label="tenantFriendlyRepayment" my="md" />
 
           <Checkbox defaultChecked label="PaymentPlanOfferForAll" my="md" />
 
+
+          {/* GenerateSmallBalance is coupled with the range slider */}
+          <Checkbox defaultChecked label="GenerateSmallBalance?" my="md" />
+
           <p my="lg">
             <b>Minimum and maximum for the small balance notices</b>
           </p>
-
-          {/* delinquentAmount + smallBalanceAmount */}
           <RangeSlider
             min={20}
             max={1500}
@@ -101,20 +110,26 @@ export function CommunityConfig() {
             py="lg"
           />
 
+        {/* La has specified that they do not want to send Payment Plan notices . if youre in LA -> the documnets will not be genrated and so we should not need extra confog logic to handle this */}
+          {/* use rangeSLider to send these 2 variables... if that is taking too long in teh ui, just use fields to collect teh 2 variables independently delinquentAmount + smallBalanceAmount */}
+          {/* discuss how we want to handle template selection / form maintance ... maybe a table with row select. maybe just multiselect */}
+         {/* for example, these are just a few Seattle specific notices... these should be managed from a table */}
+          <Checkbox defaultChecked label="GenerateCaresAct" my="md" />
+          <Checkbox defaultChecked label="GenerateERPP" my="md" />
+
+
+          
+
           <Select
             label="ImportReportSource"
             placeholder="Pick value"
             data={['Yardi', 'Real Page', 'Other']}
           />
 
-          <Checkbox defaultChecked label="GenerateCaresAct" my="md" />
+          
 
-          <Checkbox defaultChecked label="GenerateERPP" my="md" />
-
-          <Checkbox defaultChecked label="GenerateSmallBalance?" my="md" />
-
-          <Checkbox defaultChecked label="TenantFriendlyRepayment?" my="md" />
-
+ 
+ {/* This needs to be the leasing office address for the repaymnet address portion of the notices */}
           <TextInput
             label="Address"
             placeholder="65 Camrose Ave"

@@ -4,8 +4,8 @@ import { CommunityConfig } from '@/components/CommunityConfig/CommunityConfig';
 export default function HomePage() {
   return (
     <>
-     <UserOnboard />
-      {/* <CommunityConfig /> */}
+     {/* <UserOnboard /> */}
+      <CommunityConfig />
     </>
   );
 }
